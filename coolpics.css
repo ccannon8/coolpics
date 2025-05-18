@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Mooli&display=swap");
+
+/* === CSS VARIABLES === */
+:root {
+  --primary-color: #52489c;
+  --secondary-color: #59c3c3;
+  --accent-color: #f45b69;
+  --text-dark: #333;
+  --text-light: #ebebeb;
+  --primary-font: Arial, Helvetica, sans-serif;
+  --secondary-font: 'Mooli', sans-serif;
+}
+
+/* === GLOBAL STYLES === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--primary-font);
+  font-size: 1.2em;
+  background-color: #eaeaea;
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* === HEADER === */
+header {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  text-align: center;
+  padding: 1em;
+  font-family: var(--secondary-font);
+}
+
+header h1 {
+  font-size: 2em;
+  margin-bottom: 0.3em;
+}
+
+button {
+  background: none;
+  border: none;
+  color: var(--text-light);
+  font-size: 1.2em;
+  font-family: var(--secondary-font);
+  cursor: pointer;
+  margin-top: 0.5em;
+}
+
+/* === NAVIGATION === */
+nav {
+  margin-top: 0.5em;
+}
+
+nav a {
+  display: block;
+  text-decoration: none;
+  color: var(--text-light);
+  padding: 0.3em 0;
+}
+
+/* === MAIN SECTION === */
+main {
+  padding: 1em;
+  text-align: center;
+}
+
+main h2 {
+  font-family: var(--secondary-font);
+  margin-bottom: 1em;
+}
+
+/* === GALLERY === */
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1em;
+  justify-items: center;
+}
+
+.gallery figure {
+  background-color: #fff;
+  padding: 0.5em;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  width: 250px;
+  height: 250px;
+  overflow: hidden;
+}
+
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* === FOOTER === */
+footer {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  text-align: center;
+  padding: 1em;
+  font-size: 0.9em;
+  margin-top: 2em;
+}
+
+/* === LINK STYLES === */
+a:link,
+a:visited {
+  color: var(--accent-color);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* === MEDIA QUERY: Medium Screens (≥700px) === */
+@media (min-width: 700px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* === MEDIA QUERY: Large Screens (≥1000px) === */
+@media (min-width: 1000px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    margin-top: 0;
+  }
+
+  nav a {
+    display: inline-block;
+    padding: 0.5em 1em;
+  }
+
+  button {
+    display: none;
+  }
+}
